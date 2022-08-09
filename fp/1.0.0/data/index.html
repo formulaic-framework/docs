@@ -3,7 +3,7 @@
   <head>
         <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>FP Utility Methods :: Formulaic Docs</title>
+    <title>Data (Either) :: Formulaic Docs</title>
     <meta name="generator" content="Antora 1.0.0">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script src="../../../_/js/vendor/material/material-components-web.min.js"></script>
@@ -62,11 +62,11 @@
 <span class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../">Data Types (FP)</a></li>
-    <li><a href="./">FP Utility Methods</a></li>
+    <li><a href="./">Data (Either)</a></li>
   </ul>
 </span>
 </div>
-<div class="nav-container"  data-component="fp" data-version="0.6.0">
+<div class="nav-container"  data-component="fp" data-version="1.0.0">
   <aside class="nav-container">
     <div class="panels">
           <div class="nav-trees">
@@ -119,50 +119,6 @@
         <div data-component="fp" data-version="1.0.0" class="">
           <div class="nav-item is-link">
               <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
-            <a  class="" href="../../1.0.0/">
-              Data Types (FP)
-            </a>
-          </div>
-          <div class="nav-children-panel hide">
-             
-   
-     
-       
-   
-     
-      <div class="nav-item is-link">
-        
-          
-            <a  class="spacer" href="../../1.0.0/">Overview</a>              </div>
-           
-     
-      <div class="nav-item is-link">
-        
-          
-            <a  class="spacer" href="../../1.0.0/fp/">FP Interface</a>              </div>
-           
-     
-      <div class="nav-item is-link">
-        
-          
-            <a  class="spacer" href="../../1.0.0/data/">Data (Either)</a>              </div>
-           
-     
-      <div class="nav-item is-link">
-        
-          
-            <a  class="spacer" href="../../1.0.0/common/">Common FP Instances</a>              </div>
-           
-     
-      <div class="nav-item is-link">
-        
-          
-            <a  class="spacer" href="../../1.0.0/custom/">Creating Custom Data Classes</a>              </div>
-                    </div>
-        </div>
-        <div data-component="fp" data-version="0.6.0" class="hide">
-          <div class="nav-item is-link">
-              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
             <a  class="" href="../">
               Data Types (FP)
             </a>
@@ -183,19 +139,63 @@
       <div class="nav-item is-link">
         
           
-            <a  class="spacer" href="../data/">Data (Either)</a>              </div>
+            <a  class="spacer" href="../fp/">FP Interface</a>              </div>
            
      
       <div class="nav-item is-link">
         
           
-            <a  class="spacer is-current-page" href="./">FP Utility Methods</a>              </div>
+            <a  class="spacer is-current-page" href="./">Data (Either)</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../common/">Common FP Instances</a>              </div>
            
      
       <div class="nav-item is-link">
         
           
             <a  class="spacer" href="../custom/">Creating Custom Data Classes</a>              </div>
+                    </div>
+        </div>
+        <div data-component="fp" data-version="0.6.0" class="hide">
+          <div class="nav-item is-link">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../../0.6.0/">
+              Data Types (FP)
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../0.6.0/">Overview</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../0.6.0/data/">Data (Either)</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../0.6.0/methods/">FP Utility Methods</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../0.6.0/custom/">Creating Custom Data Classes</a>              </div>
                     </div>
         </div>
     </div>      
@@ -551,7 +551,7 @@
     <aside>
         <div class="toc-header">
             <span class="toc-title">On this page</span>
-            <a class="edit-page" href="https://github.com/formulaic-framework/formulaic/blob/@formulaic/fp/0.6.0/packages/fp/docs/modules/ROOT/pages/methods.adoc">
+            <a class="edit-page" href="https://github.com/formulaic-framework/formulaic/blob/@formulaic/fp/1.0.0/packages/fp/docs/modules/ROOT/pages/data.adoc">
                 <div class="mdc-ripple-surface edit-page">
                     <div class="mdc-button__ripple"></div>
                     <i class="material-icons-outlined mdc-button__icon" aria-hidden="true">edit</i>
@@ -566,178 +566,221 @@
 </div>
 
         <div class="contents">
-                <h1 class="page">FP Utility Methods</h1>
+                <h1 class="page">Data (Either)</h1>
             <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The last page described directly using the <a href="../data/#data-interface" class="page">fields</a> of <code>Data&lt;T&gt;</code> and other <code>FP</code> interfaces
-to interact with their content.</p>
+<p>The previous examples of chaining used two implementations of <code>FP</code>: <code>Literal</code> and <code>Empty</code>.</p>
 </div>
 <div class="paragraph">
-<p>However, many times you can use the <code>FP</code> utility methods to better interact with returned data.</p>
+<p>These two classes provide an implementation of <code>Either</code>,
+seen in <a href="https://hackage.haskell.org/package/base-4.16.3.0/docs/Data-Either.html">Haskell</a>,
+and JavaScript libraries such as
+<a href="https://gcanti.github.io/fp-ts/modules/Either.ts.html"><code>fp-ts</code></a>,
+<a href="https://folktale.origamitower.com/api/v2.3.0/en/folktale.result.html">Folktale</a>,
+and more.</p>
+</div>
+<div class="paragraph">
+<p>Implementations of <code>Either</code> provide a clear and unmistakable difference between the presence and absence of data -
+avoiding <a href="https://www.lucidchart.com/techblog/2015/08/31/the-worst-mistake-of-computer-science/">null</a>, <code>undefined</code>,
+and other troublesome ways of representing a lack of data.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="mapIf"><a class="anchor" href="#mapIf"></a><code>mapIf</code></h2>
+<h2 id="properties"><a class="anchor" href="#properties"></a>Properties</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><code>mapIf</code> allows transforming the data of an <code>FP</code>, operating like the <code>.then</code> method on a Promise.</p>
+<p>Before getting too far, it may be best to look at the actual properties of <code>Literal</code> and <code>Empty</code> -
+the type system will save you from the properties on the backend,
+but it may be helpful to see how FP works, and how the objects look after the compiler strips
+out type information.</p>
 </div>
-<div class="paragraph">
-<p>Specify the kind of data you&#8217;re transforming by either providing a class or the value of <code>"kind"</code>,
-and a transformation function.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>If the object matches the <code>kind</code> specified</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>and the function returns an <code>FP</code>, the return value will be used</p>
-</li>
-<li>
-<p>and the function returns raw data, the data will be wrapped in <code>Data</code> and returned</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>If the object does not match the <code>kind</code>, it will be returned as-is</p>
-</li>
-</ol>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-ts hljs" data-lang="ts">new EntityNotFound&lt;number, "number"&gt;("number")
-  .mapIf(
-    EntityNotFound, <i class="conum" data-value="1"></i><b>(1)</b>
-    notFound =&gt; new UnexpectedError(notFound),
-  );
-// =&gt; UnexpectedError <i class="conum" data-value="2"></i><b>(2)</b>
-
-new Data(10).mapIf(
-  "data", <i class="conum" data-value="3"></i><b>(3)</b>
-  data =&gt; data.data + 10, <i class="conum" data-value="4"></i><b>(4)</b>
-);
-// =&gt; Data&lt;number&gt;
-
-new Data(10).mapIf(EntityNotFound, () =&gt; {
-  throw new Error("This will never match.");
-});
-// =&gt; Data&lt;number&gt;</code></pre>
-</div>
-</div>
-<div class="colist arabic">
+<div class="admonitionblock note">
 <table>
 <tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>This example passes a class to match</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Because the class matches, the data is transformed</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>Alternatively, you can match by name</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>See <a href="#mapData"><code>mapData</code></a> for a shortcut when mapping <code>Data</code> objects</td>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The following definitions include properties defined in inherited classes to provide
+more information that exist in the actual class definitions of <code>Literal</code> and <code>Empty</code>.</p>
+</div>
+</td>
 </tr>
 </table>
 </div>
+<div class="listingblock">
+<div class="title">Properties of <code>Literal</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">class Literal&lt;T&gt; extends Data&lt;T&gt; {
+  kind: "Literal";
+
+  status: 200 | 201;
+
+  hasData: true;
+  hasError: false;
+  noValue: false;
+
+  data: T;
+}</code></pre>
 </div>
-</div>
-<div class="sect1">
-<h2 id="mapData"><a class="anchor" href="#mapData"></a><code>mapData</code></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><code>mapData</code> is a useful shortcut used when an <code>FP</code> may be a <code>Data</code> instance, and works similar to calling <code>.then</code> on a Promise.</p>
-</div>
-<div class="paragraph">
-<p>The function given to <code>mapData</code> will be provided the contents of the <code>Data</code> object.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>If <code>mapData</code> is called on a non-<code>Data</code> object, the object will be returned as-is</p>
-</li>
-<li>
-<p>If the function passed to <code>mapData</code> returns an <code>FP</code> object (has <code>kind</code>), the returned value will be passed as-is</p>
-</li>
-<li>
-<p>If the function returns any other object, it will be wrapped in <code>Data</code></p>
-</li>
-</ol>
 </div>
 <div class="listingblock">
+<div class="title">Properties of <code>Empty</code></div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ts hljs" data-lang="ts">interface User {
-  id: number;
-  username: string;
-}
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">class Empty&lt;T = any&gt; extends NoValue&lt;T&gt; {
+  kind: "Empty";
 
-/** Case 1: mapData does not transform objects that are not Data&lt;T&gt; */
-new AccessForbidden&lt;User, "User"&gt;("User").mapData(x =&gt; {
-  throw new Error("This can never be reached.");
-}); // =&gt; AccessForbidden&lt;User, "User"&gt;
+  status: 404;
 
-/**
- * Case 2: an FP&lt;T&gt; object will be returned as-is
- * (e.g. you can return Data&lt;T&gt; and it won't be wrapped as Data&lt;Data&lt;T&gt;&gt;)
- */
-new Data&lt;User&gt;({ id: 1234, username: "admin" }).mapData(user =&gt; {
-  if(user.username === "admin") {
-    return new AccessForbidden("User");
-  }
-  return user;
-}); // =&gt; Data&lt;User&gt; | AccessForbidden&lt;User, "User"&gt;
-
-/**
- * Returning raw data will be wrapped in a new `Data&lt;T&gt;` object.
- */
-new Data(5).mapData(x =&gt; x + 10) // =&gt; Data&lt;number&gt;.data = 15</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="mapDataAsync"><a class="anchor" href="#mapDataAsync"></a><code>mapDataAsync</code></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><code>mapDataAsync</code> is like <code>mapData</code>, but uses Promises.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-ts hljs" data-lang="ts">async function getUser(username: string): Promise&lt;Data&lt;User&gt; | EntityNotFound&lt;User, "User"&gt;&gt; { /* ... */ }
-async function getUserProfile(user: User): Promise&lt;Data&lt;Profile&gt; | MissingPermission&lt;Profile&gt;&gt; { /* ... */ }
-
-async function main() {
-  const user = await getUser("admin");
-  const profile = await user.mapDataAsync(user =&gt; getUserProfile(user));
-  // =&gt; Data&lt;Profile&gt; | MissingPermission&lt;Profile&gt; | EntityNotFound&lt;User, "User"&gt;
+  hasData: false;
+  hasError: false;
+  noValue: true;
 }</code></pre>
 </div>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="usage"><a class="anchor" href="#usage"></a>Using Literal/Empty Values</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are (at least) five different ways to evaluate and process values that are returned
+as <code>Literal</code> or <code>Either</code> instances, with reasons why each may be good for certain situations.</p>
+</div>
+<div class="paragraph">
+<p>We will be using the same data for all of the following examples,
+which is a basic example of loading a configuration value.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example <code>Literal</code>/<code>Empty</code> for use in following examples</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { readFileSync } from "fs";
+function loadPortConfig(filename: string = "port.txt"): Literal&lt;number&gt; | Empty&lt;number&gt; {
+  try {
+    const fileContent = readFileSync(filename, "utf8");
+    const num = parseInt(fileContent, 10);
+    if(num &amp;&amp; !isNaN(num)) {
+      return new Literal(num);
+    }
+    return new Empty();
+  } catch (e) {
+    return new Empty();
+  }
+}
+
+const portConfig = loadPortConfig();</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="usage-kind"><a class="anchor" href="#usage-kind"></a>Checking 'kind'</h3>
+<div class="paragraph">
+<p>Every <code>FP</code> object is required to include a <code>kind</code> field,
+which can determine if the returned config is a <code>Literal</code>.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example using <code>kind</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">var port: number;
+if(portConfig.kind === "Literal") {
+  console.log(`Listening on port ${portConfig.data}, as-per config.`);
+  port = portConfig.data;
+} else {
+  console.log("No configured port.  Defaulting to '80'.");
+  port = 80;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="usage-props"><a class="anchor" href="#usage-props"></a>Using Description properties (<code>hasData</code>, etc.)</h3>
+<div class="paragraph">
+<p>While <code>kind</code> provides an exact match, every <code>FP</code> also contains three flags
+providing a more general description of an object:
+<code>hasData</code>, <code>hasError</code>, <code>noValue</code>.</p>
+</div>
+<div class="paragraph">
+<p>This is overkill when only <code>Either</code> or <code>Literal</code> could be returned,
+but you could use these flags to filter out errors and empty values:</p>
+</div>
+<div class="listingblock">
+<div class="title">Example filtering by <code>hasError</code>, <code>noValue</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">if(portConfig.hasError) {
+  console.log("Error loading port!");
+} else if(portConfig.noValue) {
+  console.log("No port specified, will use default.");
+} else {
+  console.log(`Port configured as ${portConfig.data}`);
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="usage-status"><a class="anchor" href="#usage-status"></a>Using <code>status</code></h3>
+<div class="paragraph">
+<p>All <code>FP</code> objects include a <code>status</code> code, intended to represent HTTP response status codes
+(or process exit codes).</p>
+</div>
+<div class="paragraph">
+<p>One could use these fields similar to the descriptor fields - e.g. responses with <code>status</code> in the range <code>300</code> - <code>500</code> are likely errors, and this could be compared similar to the last example using <code>hasError</code> - although we don&#8217;t see why anyone would prefer this.</p>
+</div>
+<div class="paragraph">
+<p>However, if you are writing general middleware that formats <code>FP</code> objects into HTTP responses,
+you may find <code>status</code> useful.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="usage-util"><a class="anchor" href="#usage-util"></a>Utility Methods</h3>
+<div class="paragraph">
+<p>The above examples used <code>FP</code> properties, but every <code>FP</code> object also includes utility
+methods.</p>
+</div>
+<div class="paragraph">
+<p>The first example used <code>kind</code> to set a default if <code>Empty</code> was found,
+however <a href="../fp/#alt" class="page"><code>altValue()</code></a> could avoid the entire <code>if</code>/<code>else</code> block.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example with <code>altValue</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">const port = portConfig.altValue(80);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="usage-instanceof"><a class="anchor" href="#usage-instanceof"></a>Using <code>instanceof</code></h3>
+<div class="paragraph">
+<p>This method is least recommended, but in some environments, <code>instanceof</code> will work
+to determine the class hierarchy used to create the <code>FP</code> object.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">if(portConfig instanceof Literal) {
+  console.log("Port was configured!");
+} else {
+  console.log("No port configured, using defaults.");
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
             <div class="nav-buttons">
-        <a class="previous" href="                ../data/"
+        <a class="previous" href="                ../fp/"
         >
             <div class="arrow">
                 <i class="material-icons show-more" aria-hidden="true">arrow_back</i>
             </div>
              <div class="title">
-                Data (Either)
+                FP Interface
             </div>
         </a>
-        <a class="next" href="                ../custom/"
+        <a class="next" href="                ../common/"
         >
             <div class="title">
-                Creating Custom Data Classes
+                Common FP Instances
             </div>
             <div class="arrow">
                 <i class="material-icons show-more" aria-hidden="true">arrow_forward</i>

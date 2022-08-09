@@ -3,7 +3,7 @@
   <head>
         <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>FP Utility Methods :: Formulaic Docs</title>
+    <title>Interface of an FP Object :: Formulaic Docs</title>
     <meta name="generator" content="Antora 1.0.0">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script src="../../../_/js/vendor/material/material-components-web.min.js"></script>
@@ -62,11 +62,11 @@
 <span class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../">Data Types (FP)</a></li>
-    <li><a href="./">FP Utility Methods</a></li>
+    <li><a href="./">FP Interface</a></li>
   </ul>
 </span>
 </div>
-<div class="nav-container"  data-component="fp" data-version="0.6.0">
+<div class="nav-container"  data-component="fp" data-version="1.0.0">
   <aside class="nav-container">
     <div class="panels">
           <div class="nav-trees">
@@ -119,50 +119,6 @@
         <div data-component="fp" data-version="1.0.0" class="">
           <div class="nav-item is-link">
               <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
-            <a  class="" href="../../1.0.0/">
-              Data Types (FP)
-            </a>
-          </div>
-          <div class="nav-children-panel hide">
-             
-   
-     
-       
-   
-     
-      <div class="nav-item is-link">
-        
-          
-            <a  class="spacer" href="../../1.0.0/">Overview</a>              </div>
-           
-     
-      <div class="nav-item is-link">
-        
-          
-            <a  class="spacer" href="../../1.0.0/fp/">FP Interface</a>              </div>
-           
-     
-      <div class="nav-item is-link">
-        
-          
-            <a  class="spacer" href="../../1.0.0/data/">Data (Either)</a>              </div>
-           
-     
-      <div class="nav-item is-link">
-        
-          
-            <a  class="spacer" href="../../1.0.0/common/">Common FP Instances</a>              </div>
-           
-     
-      <div class="nav-item is-link">
-        
-          
-            <a  class="spacer" href="../../1.0.0/custom/">Creating Custom Data Classes</a>              </div>
-                    </div>
-        </div>
-        <div data-component="fp" data-version="0.6.0" class="hide">
-          <div class="nav-item is-link">
-              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
             <a  class="" href="../">
               Data Types (FP)
             </a>
@@ -183,19 +139,63 @@
       <div class="nav-item is-link">
         
           
+            <a  class="spacer is-current-page" href="./">FP Interface</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
             <a  class="spacer" href="../data/">Data (Either)</a>              </div>
            
      
       <div class="nav-item is-link">
         
           
-            <a  class="spacer is-current-page" href="./">FP Utility Methods</a>              </div>
+            <a  class="spacer" href="../common/">Common FP Instances</a>              </div>
            
      
       <div class="nav-item is-link">
         
           
             <a  class="spacer" href="../custom/">Creating Custom Data Classes</a>              </div>
+                    </div>
+        </div>
+        <div data-component="fp" data-version="0.6.0" class="hide">
+          <div class="nav-item is-link">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../../0.6.0/">
+              Data Types (FP)
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../0.6.0/">Overview</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../0.6.0/data/">Data (Either)</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../0.6.0/methods/">FP Utility Methods</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../0.6.0/custom/">Creating Custom Data Classes</a>              </div>
                     </div>
         </div>
     </div>      
@@ -551,7 +551,7 @@
     <aside>
         <div class="toc-header">
             <span class="toc-title">On this page</span>
-            <a class="edit-page" href="https://github.com/formulaic-framework/formulaic/blob/@formulaic/fp/0.6.0/packages/fp/docs/modules/ROOT/pages/methods.adoc">
+            <a class="edit-page" href="https://github.com/formulaic-framework/formulaic/blob/@formulaic/fp/1.0.0/packages/fp/docs/modules/ROOT/pages/fp.adoc">
                 <div class="mdc-ripple-surface edit-page">
                     <div class="mdc-button__ripple"></div>
                     <i class="material-icons-outlined mdc-button__icon" aria-hidden="true">edit</i>
@@ -566,178 +566,244 @@
 </div>
 
         <div class="contents">
-                <h1 class="page">FP Utility Methods</h1>
+                <h1 class="page">Interface of an FP Object</h1>
             <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The last page described directly using the <a href="../data/#data-interface" class="page">fields</a> of <code>Data&lt;T&gt;</code> and other <code>FP</code> interfaces
-to interact with their content.</p>
-</div>
-<div class="paragraph">
-<p>However, many times you can use the <code>FP</code> utility methods to better interact with returned data.</p>
+<p>All FP types follow an interface defined in the library as an abstract class <code>FP</code>.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="mapIf"><a class="anchor" href="#mapIf"></a><code>mapIf</code></h2>
+<h2 id="kind"><a class="anchor" href="#kind"></a><code>kind</code></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><code>mapIf</code> allows transforming the data of an <code>FP</code>, operating like the <code>.then</code> method on a Promise.</p>
+<p>All FP instances have a property <code>kind</code>, intended as an easily discriminated field to tell one type from another.</p>
 </div>
 <div class="paragraph">
-<p>Specify the kind of data you&#8217;re transforming by either providing a class or the value of <code>"kind"</code>,
-and a transformation function.</p>
+<p>If you extend an FP instance, you will need to include another property to discriminate between sub-types.</p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>If the object matches the <code>kind</code> specified</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>and the function returns an <code>FP</code>, the return value will be used</p>
-</li>
-<li>
-<p>and the function returns raw data, the data will be wrapped in <code>Data</code> and returned</p>
-</li>
-</ol>
+<div class="paragraph">
+<p>This is used for <code>UnexpectedError</code>, which is intended to contain many different error types that developers might like
+to report as a generic "500 Server Error", without revealing details about where the error came from.</p>
 </div>
-</li>
-<li>
-<p>If the object does not match the <code>kind</code>, it will be returned as-is</p>
-</li>
-</ol>
+<div class="paragraph">
+<p>The various implementations of <code>UnexpectedError</code> all use the kind <code>"UnexpectedError"</code>, and use a <code>code</code> property
+to distinguish between implementations.</p>
+</div>
+<div class="paragraph">
+<p><code>kind</code> is good to narrow instances down to a specific interface,
+but FP also includes 3 files to provide a general description of items,
+which also describes how the chaining methods will operate.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="has-data"><a class="anchor" href="#has-data"></a><code>hasData</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Objects can be marked "hasData", intended to signify "successful" responses that include data,
+including data successfully fetched from the database, or a response for the user marking an operation as completed without errors.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="has-error"><a class="anchor" href="#has-error"></a><code>hasError</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Objects can be marked as "hasError", intended to signify a "failure" is being reported.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="no-value"><a class="anchor" href="#no-value"></a><code>noValue</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The final flag is <code>noValue</code>, marking an absence of data without a specific error
+- similar to the empty case of <code>Maybe</code> (a structure in many functional languages/libraries).</p>
+</div>
+<div class="paragraph">
+<p>This is especially useful for some chaining methods - FP supports two classes of "fallback",
+one that replaces any "non-successful" response with the provided value,
+and one that only replaces a lack of value, but doesn&#8217;t change errors.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_note_on_chaining_methods"><a class="anchor" href="#_note_on_chaining_methods"></a>Note on Chaining Methods</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Like Promise methods <code>.then</code> and <code>.catch</code>, FP instances have a set of common methods that allow data to be quickly transformed,
+and operations to be applied only if data exists.</p>
+</div>
+<div class="paragraph">
+<p>Unlike Promises, Formulaic&#8217;s FP library generally does not try to call chaining methods on asynchronous values that have not been resolved yet.</p>
+</div>
+<div class="paragraph">
+<p>In the following example, <code>.catch</code> and <code>.then</code> may be called before the first value resolves.</p>
 </div>
 <div class="listingblock">
+<div class="title">Promise Chaining</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ts hljs" data-lang="ts">new EntityNotFound&lt;number, "number"&gt;("number")
-  .mapIf(
-    EntityNotFound, <i class="conum" data-value="1"></i><b>(1)</b>
-    notFound =&gt; new UnexpectedError(notFound),
-  );
-// =&gt; UnexpectedError <i class="conum" data-value="2"></i><b>(2)</b>
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">const response = Promise.resolve(10);
+const fallback = response.catch(e =&gt; -1);
+const mapped = fallback.then(i =&gt; i * 2);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>However with FP, you should <code>await</code> asynchronous values before calling chaining methods:</p>
+</div>
+<div class="listingblock">
+<div class="title">Awaiting FP values</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">async function getData(): Promise&lt;Literal&lt;number&gt; | EntityNotFound&lt;number&gt;&gt; {
+  return new Literal(10);
+}
 
-new Data(10).mapIf(
-  "data", <i class="conum" data-value="3"></i><b>(3)</b>
-  data =&gt; data.data + 10, <i class="conum" data-value="4"></i><b>(4)</b>
-);
-// =&gt; Data&lt;number&gt;
-
-new Data(10).mapIf(EntityNotFound, () =&gt; {
-  throw new Error("This will never match.");
-});
-// =&gt; Data&lt;number&gt;</code></pre>
+const value = await getData();
+const mapped = await value.chain(async i =&gt; Promise.resolve(i + 1));
+const second = await mapped.chain(async i =&gt; Promise.resolve(i * 2));</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="chain"><a class="anchor" href="#chain"></a><code>chain()</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>FP&#8217;s <code>.chain</code> works similar to Promise&#8217;s <code>.then</code> - it expects an asynchronous transformation to be provided,
+does not call the given function if in an error state,
+and can switch to an error state if the provided transformation produces an error.</p>
+</div>
+<div class="listingblock">
+<div class="title">Performs Transformations</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">const url = new Literal("http://example.com/");
+const fetched = await url.chain(async url =&gt; {
+  return await fetch(url);
+});</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Doesn&#8217;t run unless "successful data"</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">const missingUrl = new Empty();
+const fetchMissing = await missingUrl.chain(async url =&gt; {
+  // This code will never run, because 'Empty' isn't "successful data"
+  return new MissingPermission();
+}); // =&gt; Empty&lt;string&gt; <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>This example passes a class to match</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Because the class matches, the data is transformed</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>Alternatively, you can match by name</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>See <a href="#mapData"><code>mapData</code></a> for a shortcut when mapping <code>Data</code> objects</td>
+<td>Chaining methods are typed well enough that the transform will be completely ignored if TypeScript knows that there&#8217;s no way <code>missingUrl</code> could be a data type.</td>
 </tr>
 </table>
 </div>
+<div class="listingblock">
+<div class="title">Will keep returned FPs as-is (whether data, error, or another type)</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">const failedFetch = await url.chain(async url =&gt; {
+  return new UnexpectedFailure();
+}); // =&gt; UnexpectedFailure</code></pre>
 </div>
-</div>
-<div class="sect1">
-<h2 id="mapData"><a class="anchor" href="#mapData"></a><code>mapData</code></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><code>mapData</code> is a useful shortcut used when an <code>FP</code> may be a <code>Data</code> instance, and works similar to calling <code>.then</code> on a Promise.</p>
-</div>
-<div class="paragraph">
-<p>The function given to <code>mapData</code> will be provided the contents of the <code>Data</code> object.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>If <code>mapData</code> is called on a non-<code>Data</code> object, the object will be returned as-is</p>
-</li>
-<li>
-<p>If the function passed to <code>mapData</code> returns an <code>FP</code> object (has <code>kind</code>), the returned value will be passed as-is</p>
-</li>
-<li>
-<p>If the function returns any other object, it will be wrapped in <code>Data</code></p>
-</li>
-</ol>
 </div>
 <div class="listingblock">
+<div class="title">Wraps non-FP results in <code>Literal</code> (to allow chaining)</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ts hljs" data-lang="ts">interface User {
-  id: number;
-  username: string;
-}
-
-/** Case 1: mapData does not transform objects that are not Data&lt;T&gt; */
-new AccessForbidden&lt;User, "User"&gt;("User").mapData(x =&gt; {
-  throw new Error("This can never be reached.");
-}); // =&gt; AccessForbidden&lt;User, "User"&gt;
-
-/**
- * Case 2: an FP&lt;T&gt; object will be returned as-is
- * (e.g. you can return Data&lt;T&gt; and it won't be wrapped as Data&lt;Data&lt;T&gt;&gt;)
- */
-new Data&lt;User&gt;({ id: 1234, username: "admin" }).mapData(user =&gt; {
-  if(user.username === "admin") {
-    return new AccessForbidden("User");
-  }
-  return user;
-}); // =&gt; Data&lt;User&gt; | AccessForbidden&lt;User, "User"&gt;
-
-/**
- * Returning raw data will be wrapped in a new `Data&lt;T&gt;` object.
- */
-new Data(5).mapData(x =&gt; x + 10) // =&gt; Data&lt;number&gt;.data = 15</code></pre>
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">const input = new Literal(10);
+const formatted = input.chain(async num =&gt; {
+  return `Number: ${num}`;
+}); // =&gt; Literal&lt;string&gt;</code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="mapDataAsync"><a class="anchor" href="#mapDataAsync"></a><code>mapDataAsync</code></h2>
+<h2 id="map"><a class="anchor" href="#map"></a><code>map()</code></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><code>mapDataAsync</code> is like <code>mapData</code>, but uses Promises.</p>
+<p>Map works the same as <a href="#chain"><code>chain()</code></a> without using Promises.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ts hljs" data-lang="ts">async function getUser(username: string): Promise&lt;Data&lt;User&gt; | EntityNotFound&lt;User, "User"&gt;&gt; { /* ... */ }
-async function getUserProfile(user: User): Promise&lt;Data&lt;Profile&gt; | MissingPermission&lt;Profile&gt;&gt; { /* ... */ }
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">const input = new Literal(10);
+const output = input.map(i =&gt; i * 2);</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="or"><a class="anchor" href="#or"></a><code>or()</code>, <code>orValue()</code>, <code>orThen()</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>or()</code> and <code>orValue()</code> take a fallback value that replaces any <a href="#has-error"><code>hasError</code></a> or <a href="#no-value"><code>noValue</code></a>
+FP.</p>
+</div>
+<div class="paragraph">
+<p>You can provide an FP instance, or a non-FP value that will be wrapped in <code>Literal</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">const error = new UnexpectedFailure();
+const safe = error.orValue(new Literal(10));
+// =&gt; Literal&lt;number&gt;
 
-async function main() {
-  const user = await getUser("admin");
-  const profile = await user.mapDataAsync(user =&gt; getUserProfile(user));
-  // =&gt; Data&lt;Profile&gt; | MissingPermission&lt;Profile&gt; | EntityNotFound&lt;User, "User"&gt;
-}</code></pre>
+const safeCallback = error.or(() =&gt; {
+  return new Empty();
+});
+// =&gt; Empty&lt;unknown&gt;
+
+const empty = new Empty();
+const withDefault = empty.or(10);
+// =&gt; Literal&lt;number&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="alt"><a class="anchor" href="#alt"></a><code>alt()</code>, <code>altValue()</code>, <code>altThen()</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>alt</code> functions similar to <code>or</code>, taking in a fallback value (or a function that returns the fallback value).
+However, the fallback value is only used if <a href="#no-value"><code>noValue</code></a>.</p>
+</div>
+<div class="paragraph">
+<p>This prevents hiding errors, while still allowing defaults.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">const dbTable = new EntityService&lt;User&gt;(/* ... */);
+
+const existingUser = await dbTable.findOne({ username: "admin" });
+// =&gt; Literal&lt;User&gt; | EntityNotFound&lt;User&gt; | DatabaseException&lt;User, "findOne"&gt;
+
+const user = await existingUser.altThen(() =&gt; {
+  const user = new User();
+  user.username = "admin";
+  return dbTable.save(user);
+});
+// =&gt; Literal&lt;User&gt; | DatabaseException&lt;User, "findOne"&gt; | DatabaseException&lt;User, "save"&gt;</code></pre>
 </div>
 </div>
 </div>
 </div>
             <div class="nav-buttons">
-        <a class="previous" href="                ../data/"
+        <a class="previous" href="                ../"
         >
             <div class="arrow">
                 <i class="material-icons show-more" aria-hidden="true">arrow_back</i>
             </div>
              <div class="title">
-                Data (Either)
+                Overview
             </div>
         </a>
-        <a class="next" href="                ../custom/"
+        <a class="next" href="                ../data/"
         >
             <div class="title">
-                Creating Custom Data Classes
+                Data (Either)
             </div>
             <div class="arrow">
                 <i class="material-icons show-more" aria-hidden="true">arrow_forward</i>
