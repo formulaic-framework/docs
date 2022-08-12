@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Data (Either) :: Formulaic Docs</title>
+    <meta name="generator" content="Antora 1.0.0">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script src="../../../_/js/vendor/material/material-components-web.min.js"></script>
+
+    <script src="../../../_/js/vendor/highlight/highlight.min.js"></script>
+    <script src="../../../_/js/vendor/highlight/asciidoc.min.js"></script>
+    <script src="../../../_/js/vendor/highlight/groovy.min.js"></script>
+    <script src="../../../_/js/vendor/highlight/javascript.min.js"></script>
+    <script src="../../../_/js/vendor/highlight/bash.min.js"></script>
+    <script src="../../../_/js/vendor/highlight/typescript.min.js"></script>
+
+    <script src="../../../_/js/vendor/tippy/popper.js"></script>
+    <script src="../../../_/js/vendor/tippy/tippy.js"></script>
+
+    <script src="../../../_/js/vendor/clipboardjs/clipboard.min.js"></script>
+  </head>
+  <body class="article">
+    <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+  <div class="mdc-top-app-bar__row">
+    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+      <img class="toolbar-logo" src="../../../_/img/tabler-icons/math-function.svg" viewBox="20 0 80 100"
+        alt="Icon representing Formulaic">
+      <span class="mdc-top-app-bar__title">Formulaic Docs</span>
+    </section>
+
+    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+      <i class="material-icons mdc-icon-button search" tabindex="0" role="button">
+        search
+      </i>
+    </section>
+  </div>
+
+  <div class="mdc-top-app-bar__row sdp-top-app-bar__search mdc-drawer-app-content hide">
+    <section class="mdc-top-app-bar__section">
+      <i class="material-icons mdc-icon-button search-arrow-back" tabindex="0" role="button" title="Close search">
+        arrow_back
+      </i>
+
+      <div class="mdc-text-field search expanded">
+        <input type="text" id="search-input" class="mdc-text-field__input search" />
+        <label class="mdc-floating-label mdc-floating-label--float-above" for="search-input">
+          Search the docs
+        </label>
+      </div>
+
+      <i class="material-icons mdc-icon-button search-clear-query" role="button" tabindex="0" title="Clear search">
+        close
+      </i>
+    </section>
+  </div>
+</header>
+    <div class="body">
+<div class="toolbar mobileOnly" role="navigation">
+  <button id="toolbar-nav-toggle" class="mdc-icon-button material-icons mdc-icon-button">menu</button>
+  <a href="../../../intro/" class="home-link"></a>
+<span class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../">Data Types (FP)</a></li>
+    <li><a href="./">Data (Either)</a></li>
+  </ul>
+</span>
+</div>
+<div class="nav-container"  data-component="fp" data-version="2.0.1">
+  <aside class="nav-container">
+    <div class="panels">
+          <div class="nav-trees">
+      <div class="version-box">
+        <select data-component="intro" class="select-version">
+            <option value="master">
+              master
+            </option>
+        </select>
+      </div>
+        <div data-component="intro" data-version="master" class="">
+          <div class="nav-item is-link">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../../../intro/">
+              Introduction
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../intro/">Introduction</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../intro/docs/">Reading the Documentation</a>              </div>
+                    </div>
+        </div>
+    </div>      
+    <div class="clear"></div>
+    <div class="nav-trees">
+      <div class="version-box">
+        <select data-component="fp" class="select-version">
+            <option value="2.0.1">
+              2.0.1
+            </option>
+            <option value="2.0.0">
+              2.0.0
+            </option>
+            <option value="1.0.0">
+              1.0.0
+            </option>
+            <option value="0.6.0">
+              0.6.0
+            </option>
+        </select>
+      </div>
+        <div data-component="fp" data-version="2.0.1" class="">
+          <div class="nav-item is-link">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../">
+              Data Types (FP)
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../">Overview</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../fp/">FP Interface</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer is-current-page" href="./">Data (Either)</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../common/">Common FP Instances</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../custom/">Creating Custom Data Classes</a>              </div>
+                    </div>
+        </div>
+        <div data-component="fp" data-version="2.0.0" class="hide">
+          <div class="nav-item is-link">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../../2.0.0/">
+              Data Types (FP)
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../2.0.0/">Overview</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../2.0.0/fp/">FP Interface</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../2.0.0/data/">Data (Either)</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../2.0.0/common/">Common FP Instances</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../2.0.0/custom/">Creating Custom Data Classes</a>              </div>
+                    </div>
+        </div>
+        <div data-component="fp" data-version="1.0.0" class="hide">
+          <div class="nav-item is-link">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../../1.0.0/">
+              Data Types (FP)
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../1.0.0/">Overview</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../1.0.0/fp/">FP Interface</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../1.0.0/data/">Data (Either)</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../1.0.0/common/">Common FP Instances</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../1.0.0/custom/">Creating Custom Data Classes</a>              </div>
+                    </div>
+        </div>
+        <div data-component="fp" data-version="0.6.0" class="hide">
+          <div class="nav-item is-link">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../../0.6.0/">
+              Data Types (FP)
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../0.6.0/">Overview</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../0.6.0/data/">Data (Either)</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../0.6.0/methods/">FP Utility Methods</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../0.6.0/custom/">Creating Custom Data Classes</a>              </div>
+                    </div>
+        </div>
+    </div>      
+    <div class="clear"></div>
+    <div class="nav-trees">
+      <div class="version-box">
+        <select data-component="entity-service" class="select-version">
+            <option value="3.0.1">
+              3.0.1
+            </option>
+            <option value="3.0.0">
+              3.0.0
+            </option>
+            <option value="2.0.0">
+              2.0.0
+            </option>
+            <option value="1.1.2">
+              1.1.2
+            </option>
+        </select>
+      </div>
+        <div data-component="entity-service" data-version="3.0.1" class="">
+          <div class="nav-item is-link">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../../../entity-service/3.0.1/">
+              Entity Service
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../entity-service/3.0.1/">Overview</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../entity-service/3.0.1/usage/">Entity Service Usage</a>              </div>
+                    </div>
+        </div>
+        <div data-component="entity-service" data-version="3.0.0" class="hide">
+          <div class="nav-item is-link">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../../../entity-service/3.0.0/">
+              Entity Service
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../entity-service/3.0.0/">Overview</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../entity-service/3.0.0/usage/">Entity Service Usage</a>              </div>
+                    </div>
+        </div>
+        <div data-component="entity-service" data-version="2.0.0" class="hide">
+          <div class="nav-item is-link">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../../../entity-service/2.0.0/">
+              Entity Service
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../entity-service/2.0.0/">Overview</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../entity-service/2.0.0/usage/">Entity Service Usage</a>              </div>
+                    </div>
+        </div>
+        <div data-component="entity-service" data-version="1.1.2" class="hide">
+          <div class="nav-item is-link">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../../../entity-service/1.1.2/">
+              Entity Service
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../entity-service/1.1.2/">Overview</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../entity-service/1.1.2/usage/">Entity Service Usage</a>              </div>
+                    </div>
+        </div>
+    </div>      
+    <div class="clear"></div>
+    <div class="nav-trees">
+      <div class="version-box">
+        <select data-component="hash" class="select-version">
+            <option value="0.2.2">
+              0.2.2
+            </option>
+        </select>
+      </div>
+        <div data-component="hash" data-version="0.2.2" class="">
+          <div class="nav-item is-link">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../../../hash/0.2.2/">
+              Hashing Module
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../hash/0.2.2/">Overview</a>              </div>
+                    </div>
+        </div>
+    </div>      
+    <div class="clear"></div>
+    <div class="nav-trees">
+      <div class="version-box">
+        <select data-component="id" class="select-version">
+            <option value="0.2.2">
+              0.2.2
+            </option>
+        </select>
+      </div>
+        <div data-component="id" data-version="0.2.2" class="">
+          <div class="nav-item is-link">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../../../id/0.2.2/">
+              ID Generation
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../id/0.2.2/">Overview</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../id/0.2.2/formats/">Supported ID Formats</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../id/0.2.2/setup/">ID Generator Setup</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../id/0.2.2/usage/">ID Generator Usage</a>              </div>
+                    </div>
+        </div>
+    </div>      
+    <div class="clear"></div>
+    <div class="nav-trees">
+      <div class="version-box">
+        <select data-component="fp-interceptor" class="select-version">
+            <option value="2.0.1">
+              2.0.1
+            </option>
+            <option value="2.0.0">
+              2.0.0
+            </option>
+            <option value="1.0.0">
+              1.0.0
+            </option>
+            <option value="0.3.4">
+              0.3.4
+            </option>
+        </select>
+      </div>
+        <div data-component="fp-interceptor" data-version="2.0.1" class="">
+          <div class="nav-item is-link">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../../../fp-interceptor/2.0.1/">
+              FP Interceptor
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../fp-interceptor/2.0.1/">Overview</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../fp-interceptor/2.0.1/install/">Installation</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../fp-interceptor/2.0.1/usage/">Usage</a>              </div>
+                    </div>
+        </div>
+        <div data-component="fp-interceptor" data-version="2.0.0" class="hide">
+          <div class="nav-item is-link">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../../../fp-interceptor/2.0.0/">
+              FP Interceptor
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../fp-interceptor/2.0.0/">Overview</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../fp-interceptor/2.0.0/install/">Installation</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../fp-interceptor/2.0.0/usage/">Usage</a>              </div>
+                    </div>
+        </div>
+        <div data-component="fp-interceptor" data-version="1.0.0" class="hide">
+          <div class="nav-item is-link">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../../../fp-interceptor/1.0.0/">
+              FP Interceptor
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../fp-interceptor/1.0.0/">Overview</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../fp-interceptor/1.0.0/install/">Installation</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../fp-interceptor/1.0.0/usage/">Usage</a>              </div>
+                    </div>
+        </div>
+        <div data-component="fp-interceptor" data-version="0.3.4" class="hide">
+          <div class="nav-item is-link">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../../../fp-interceptor/0.3.4/">
+              FP Interceptor
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../fp-interceptor/0.3.4/">Overview</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../fp-interceptor/0.3.4/install/">Installation</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../fp-interceptor/0.3.4/usage/">Usage</a>              </div>
+                    </div>
+        </div>
+    </div>      
+    <div class="clear"></div>
+    <div class="nav-trees">
+      <div class="version-box">
+        <select data-component="acl" class="select-version">
+            <option value="1.0.1">
+              1.0.1
+            </option>
+        </select>
+      </div>
+        <div data-component="acl" data-version="1.0.1" class="">
+          <div class="nav-item is-link">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../../../acl/1.0.1/">
+              Authorization (ACL) Utilities
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../acl/1.0.1/">Overview</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item is-link">
+        <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+          
+            <a  class="" href="../../../acl/1.0.1/package/">Creating an ACL Package</a>              </div>
+       
+        <div class="nav-children-panel hide">
+           
+   
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../acl/1.0.1/package/01-roles/">Define User Roles</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../acl/1.0.1/package/02-subjects/">Define ACL Subjects</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../acl/1.0.1/package/03-abilities/">Define Abilities</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../acl/1.0.1/package/04-rules/">Defining Rules/Permissions</a>              </div>
+                  </div>
+              </div>
+        </div>
+    </div>      
+    <div class="clear"></div>
+    <div class="nav-trees">
+      <div class="version-box">
+        <select data-component="auth-module" class="select-version">
+            <option value="0.2.2">
+              0.2.2
+            </option>
+        </select>
+      </div>
+        <div data-component="auth-module" data-version="0.2.2" class="">
+          <div class="nav-item is-link">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../../../auth-module/0.2.2/">
+              Authentication Module
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../auth-module/0.2.2/">Overview</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../auth-module/0.2.2/jwt-structure/">Defining a JWT Structure</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../auth-module/0.2.2/importing/">Importing the Auth Module</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../auth-module/0.2.2/basic/">Basic Authentication Usage</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../auth-module/0.2.2/acl/">Advanced Authorization Usage</a>              </div>
+                    </div>
+        </div>
+    </div>      
+    <div class="clear"></div>
+
+    </div>
+  </aside>
+</div>
+<main>
+<article class="doc">
+        <div class="on-this-page-container desktopOnly">
+    <aside>
+        <div class="toc-header">
+            <span class="toc-title">On this page</span>
+            <a class="edit-page" href="https://github.com/formulaic-framework/formulaic/blob/@formulaic/fp/2.0.1/packages/fp/docs/modules/ROOT/pages/data.adoc">
+                <div class="mdc-ripple-surface edit-page">
+                    <div class="mdc-button__ripple"></div>
+                    <i class="material-icons-outlined mdc-button__icon" aria-hidden="true">edit</i>
+                    <span class="mdc-button__label">Edit on GitHub</span>
+                </div>
+            </a>
+        </div>
+        <ul id="toc" class="toc">            
+
+        </ul>
+    </aside>
+</div>
+
+        <div class="contents">
+                <h1 class="page">Data (Either)</h1>
+            <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The previous examples of chaining used two implementations of <code>FP</code>: <code>Literal</code> and <code>Empty</code>.</p>
+</div>
+<div class="paragraph">
+<p>These two classes provide an implementation of <code>Either</code>,
+seen in <a href="https://hackage.haskell.org/package/base-4.16.3.0/docs/Data-Either.html">Haskell</a>,
+and JavaScript libraries such as
+<a href="https://gcanti.github.io/fp-ts/modules/Either.ts.html"><code>fp-ts</code></a>,
+<a href="https://folktale.origamitower.com/api/v2.3.0/en/folktale.result.html">Folktale</a>,
+and more.</p>
+</div>
+<div class="paragraph">
+<p>Implementations of <code>Either</code> provide a clear and unmistakable difference between the presence and absence of data -
+avoiding <a href="https://www.lucidchart.com/techblog/2015/08/31/the-worst-mistake-of-computer-science/">null</a>, <code>undefined</code>,
+and other troublesome ways of representing a lack of data.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="properties"><a class="anchor" href="#properties"></a>Properties</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Before getting too far, it may be best to look at the actual properties of <code>Literal</code> and <code>Empty</code> -
+the type system will save you from the properties on the backend,
+but it may be helpful to see how FP works, and how the objects look after the compiler strips
+out type information.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The following definitions include properties defined in inherited classes to provide
+more information that exist in the actual class definitions of <code>Literal</code> and <code>Empty</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Properties of <code>Literal</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">class Literal&lt;T&gt; extends Data&lt;T&gt; {
+  kind: "Literal";
+
+  status: 200 | 201;
+
+  hasData: true;
+  hasError: false;
+  noValue: false;
+
+  data: T;
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Properties of <code>Empty</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">class Empty&lt;T = any&gt; extends NoValue&lt;T&gt; {
+  kind: "Empty";
+
+  status: 404;
+
+  hasData: false;
+  hasError: false;
+  noValue: true;
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="usage"><a class="anchor" href="#usage"></a>Using Literal/Empty Values</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are (at least) five different ways to evaluate and process values that are returned
+as <code>Literal</code> or <code>Either</code> instances, with reasons why each may be good for certain situations.</p>
+</div>
+<div class="paragraph">
+<p>We will be using the same data for all of the following examples,
+which is a basic example of loading a configuration value.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example <code>Literal</code>/<code>Empty</code> for use in following examples</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { readFileSync } from "fs";
+function loadPortConfig(filename: string = "port.txt"): Literal&lt;number&gt; | Empty&lt;number&gt; {
+  try {
+    const fileContent = readFileSync(filename, "utf8");
+    const num = parseInt(fileContent, 10);
+    if(num &amp;&amp; !isNaN(num)) {
+      return new Literal(num);
+    }
+    return new Empty();
+  } catch (e) {
+    return new Empty();
+  }
+}
+
+const portConfig = loadPortConfig();</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="usage-kind"><a class="anchor" href="#usage-kind"></a>Checking 'kind'</h3>
+<div class="paragraph">
+<p>Every <code>FP</code> object is required to include a <code>kind</code> field,
+which can determine if the returned config is a <code>Literal</code>.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example using <code>kind</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">var port: number;
+if(portConfig.kind === "Literal") {
+  console.log(`Listening on port ${portConfig.data}, as-per config.`);
+  port = portConfig.data;
+} else {
+  console.log("No configured port.  Defaulting to '80'.");
+  port = 80;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="usage-props"><a class="anchor" href="#usage-props"></a>Using Description properties (<code>hasData</code>, etc.)</h3>
+<div class="paragraph">
+<p>While <code>kind</code> provides an exact match, every <code>FP</code> also contains three flags
+providing a more general description of an object:
+<code>hasData</code>, <code>hasError</code>, <code>noValue</code>.</p>
+</div>
+<div class="paragraph">
+<p>This is overkill when only <code>Either</code> or <code>Literal</code> could be returned,
+but you could use these flags to filter out errors and empty values:</p>
+</div>
+<div class="listingblock">
+<div class="title">Example filtering by <code>hasError</code>, <code>noValue</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">if(portConfig.hasError) {
+  console.log("Error loading port!");
+} else if(portConfig.noValue) {
+  console.log("No port specified, will use default.");
+} else {
+  console.log(`Port configured as ${portConfig.data}`);
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="usage-status"><a class="anchor" href="#usage-status"></a>Using <code>status</code></h3>
+<div class="paragraph">
+<p>All <code>FP</code> objects include a <code>status</code> code, intended to represent HTTP response status codes
+(or process exit codes).</p>
+</div>
+<div class="paragraph">
+<p>One could use these fields similar to the descriptor fields - e.g. responses with <code>status</code> in the range <code>300</code> - <code>500</code> are likely errors, and this could be compared similar to the last example using <code>hasError</code> - although we don&#8217;t see why anyone would prefer this.</p>
+</div>
+<div class="paragraph">
+<p>However, if you are writing general middleware that formats <code>FP</code> objects into HTTP responses,
+you may find <code>status</code> useful.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="usage-util"><a class="anchor" href="#usage-util"></a>Utility Methods</h3>
+<div class="paragraph">
+<p>The above examples used <code>FP</code> properties, but every <code>FP</code> object also includes utility
+methods.</p>
+</div>
+<div class="paragraph">
+<p>The first example used <code>kind</code> to set a default if <code>Empty</code> was found,
+however <a href="../fp/#alt" class="page"><code>altValue()</code></a> could avoid the entire <code>if</code>/<code>else</code> block.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example with <code>altValue</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">const port = portConfig.altValue(80);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="usage-instanceof"><a class="anchor" href="#usage-instanceof"></a>Using <code>instanceof</code></h3>
+<div class="paragraph">
+<p>This method is least recommended, but in some environments, <code>instanceof</code> will work
+to determine the class hierarchy used to create the <code>FP</code> object.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">if(portConfig instanceof Literal) {
+  console.log("Port was configured!");
+} else {
+  console.log("No port configured, using defaults.");
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+            <div class="nav-buttons">
+        <a class="previous" href="                ../fp/"
+        >
+            <div class="arrow">
+                <i class="material-icons show-more" aria-hidden="true">arrow_back</i>
+            </div>
+             <div class="title">
+                FP Interface
+            </div>
+        </a>
+        <a class="next" href="                ../common/"
+        >
+            <div class="title">
+                Common FP Instances
+            </div>
+            <div class="arrow">
+                <i class="material-icons show-more" aria-hidden="true">arrow_forward</i>
+            </div>
+        </a>
+</div>        </div>
+</article>
+<div class="footer">
+  <p>© Copyright 2022 Flyyn</p>
+  <p>Built with <a href="https://antora.org">Antora</a> using a <a href="https://github.com/boozallen/sdp-docs-skin">custom UI Bundle</a>.</p>
+</div>
+</main>
+</div>
+    <script src="../../../_/js/site.js"></script>
+<script async src="../../../_/../search-index.js"></script>  </body>
+</html>
