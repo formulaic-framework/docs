@@ -47,6 +47,11 @@ content:
       start_paths:
         - packages/auth-module/docs
 
+    - url: ../formulaic
+      branches: HEAD
+      start_paths:
+        - packages/ormconfig/docs
+
     # - url: ../example-site-builder
     #   branches: HEAD
     #   start_paths:
@@ -63,6 +68,7 @@ asciidoc:
     acl: xref:acl::index.adoc[ACL]
     bcrypt: https://www.npmjs.com/package/bcrypt[bcrypt]
     casl: https://casl.js.org/v5/[CASL]
+    class-transformer: https://github.com/typestack/class-transformer[class-transformer]
     formulaic: https://github.com/formulaic-framework/formulaic[Formulaic]
     fp: xref:fp::index.adoc[FP]
     fp-interceptor: xref:fp-interceptor::index.adoc[fp-interceptor]
