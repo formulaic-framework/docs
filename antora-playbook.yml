@@ -87,6 +87,8 @@ content:
     - url: https://github.com/formulaic-framework/formulaic.git
       tags:
         - "@formulaic/ormconfig/*"
+        - "!@formulaic/ormconfig/*.*.*-rc.*"
+        # - "@formulaic/ormconfig/0.1.2-rc.*"
       start_paths:
         - packages/ormconfig/docs
 
