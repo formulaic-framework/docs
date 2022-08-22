@@ -52,6 +52,11 @@ content:
       start_paths:
         - packages/ormconfig/docs
 
+    - url: ../swarm
+      branches: HEAD
+      start_paths:
+        - docs
+
     # - url: ../example-site-builder
     #   branches: HEAD
     #   start_paths:

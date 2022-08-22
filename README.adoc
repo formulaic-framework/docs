@@ -9,6 +9,7 @@ This repository contains the configuration used to build documentation for the F
 ```
 sudo docker run --rm -t \
   -v "$(pwd)/../formulaic":/formulaic:Z \
+  -v "$(pwd)/../swarm":/swarm:Z \
   -v "$(pwd)/../example-site-builder":/example-site-builder:Z \
   -v $(pwd):/antora:Z \
   ghcr.io/boozallen/sdp-docs/builder:latest generate --stacktrace --generator booz-allen-site-generator --to-dir docs antora-playbook.local.yml

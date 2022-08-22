@@ -92,6 +92,12 @@ content:
       start_paths:
         - packages/ormconfig/docs
 
+    - url: https://github.com/formulaic-framework/swarm.git
+      branches:
+        - main
+      start_paths:
+        - docs
+
 ui:
   bundle:
     url: https://github.com/boozallen/sdp-docs-skin/releases/download/1.1/ui-bundle.zip
